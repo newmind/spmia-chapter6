@@ -14,9 +14,8 @@ server:
   port: 8888
 
 spring:
-  ## profile 설정하면 git 안됨
-  # profiles:
-  #   active: native
+  profiles:
+    active: git
   cloud:
     config:
       server:
@@ -27,6 +26,11 @@ spring:
           # username: native-cloud-apps
           # password: 0ffended
           # uri: https://github.com/LeeKyoungIl/spring-cloud-config-repository
+        native:
+          #  searchLocations: file://<chapter 3>/confsvr/src/main/resources/config/licensingservice,
+          #                   file://<chapter 3>confsvr/src/main/resources/config/organizationservice
+          searchLocations: file:///src/test/java/spring-msa-ws/chapter3/confsvr/src/main/resources/config/licensingservice
+##              #searchLocations: classpath:config/,classpath:config/licensingservice
 
 management:
   security:
