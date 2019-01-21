@@ -1,11 +1,3 @@
-spring:
-  application:
-    name: organizationservice
-  profile:
-    active: default
-  cloud:
-    config:
-      enabled: true
 
 eureka:
   instance:
