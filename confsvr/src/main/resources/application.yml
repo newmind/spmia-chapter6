@@ -18,6 +18,8 @@ spring:
     active: git
   cloud:
     config:
+      discovery:
+        enabled: true
       server:
         encrypt.enabled: false
         git:
