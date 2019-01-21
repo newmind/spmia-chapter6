@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
  * LisenseService
  */
 @Service
-public class LisenseService {
+public class LicenseService {
 
   @Autowired
   private LicenseRepository licenseRepository;
@@ -41,7 +41,7 @@ public class LisenseService {
     return license.withComment(config.getExampleProperty());
   }
 
-  public List<License> getLicenseByOrg(String organizationId) {
+  public List<License> getLicensesByOrg(String organizationId) {
     return licenseRepository.findByOrganizationId(organizationId);
   }
 
