@@ -2,11 +2,18 @@
 # management.endpoints.env.enabled=true
 # management.endpoints.web.exposure.include=*
 
+# management:
+#   endpoint:
+#     env:
+#       enabled: true
+#     refresh:
+#       enabled: true
+#   endpoints:
+#     web:
+#       exposure:
+#         include: env
 management:
-  endpoint:
-    env:
-      enabled: true
   endpoints:
     web:
       exposure:
-        include: env
+        include: "*"

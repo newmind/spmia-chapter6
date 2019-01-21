@@ -28,7 +28,7 @@ public class LisenseService {
   }
 
   public List<License> getLicenseByOrg(String organizationId) {
-    return licenseRepository.findByOrgranizationId(organizationId);
+    return licenseRepository.findByOrganizationId(organizationId);
   }
 
   public void saveLicense(License license) {

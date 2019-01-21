@@ -6,23 +6,23 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="licenses")
+@Table(name = "licenses")
 public class License{
 
   @Id
-  @Column(name="license_id", nullable=false)
+  @Column(name = "license_id", nullable = false)
   private String licenseId;
 
-  @Column(name="organization_id", nullable=false)
+  @Column(name = "organization_id", nullable = false)
   private String organizationId;
 
-  @Column(name="product_name", nullable=false)
+  @Column(name = "product_name", nullable = false)
   private String productName;
 
-  @Column(name="license_type", nullable=false)
+  @Column(name = "license_type", nullable = false)
   private String licenseType;
 
-  @Column(name="license_max", nullable=false)
+  @Column(name = "license_max", nullable = false)
   private Integer licenseMax;
 
   @Column(name = "license_allocated", nullable = false)
@@ -30,6 +30,11 @@ public class License{
 
   @Column(name="comment")
   private String comment;
+
+
+  public Integer getLicenseMax() {
+    return licenseMax;
+  }
 
   public void setLicenseMax(Integer licenseMax) {
     this.licenseMax = licenseMax;
