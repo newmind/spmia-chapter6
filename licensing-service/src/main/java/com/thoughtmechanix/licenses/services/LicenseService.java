@@ -87,6 +87,11 @@ public class LicenseService {
       },
       commandProperties={
           // @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds", value="12000")  // 테스트를 위해 12초 대기하게 해서, 11초가 걸려도 통과되게
+          @HystrixProperty(name="circuitBreaker.requestVolumeThreshold", value="10"),
+          @HystrixProperty(name="circuitBreaker.errorThresholdPercentage", value="75"),
+          @HystrixProperty(name="circuitBreaker.sleepWindowInMilliseconds", value="7000"),
+          @HystrixProperty(name="metrics.rollingStats.timeInMilliseconds", value="15000"),
+          @HystrixProperty(name="metrics.rollingStats.numBuckets", value="5")
       }
   )
   public List<License> getLicensesByOrg(String organizationId) {
