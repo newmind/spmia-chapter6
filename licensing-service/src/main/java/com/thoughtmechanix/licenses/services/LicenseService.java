@@ -1,5 +1,6 @@
 package com.thoughtmechanix.licenses.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
@@ -78,8 +79,9 @@ public class LicenseService {
   }
 
   @HystrixCommand(
+      fallbackMethod = "buildFallbackLicenseList",
       commandProperties={
-          @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds", value="12000")  // 테스트를 위해 12초 대기하게 해서, 11초가 걸려도 통과되게
+          // @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds", value="12000")  // 테스트를 위해 12초 대기하게 해서, 11초가 걸려도 통과되게
       }
   )
   public List<License> getLicensesByOrg(String organizationId) {
@@ -88,6 +90,17 @@ public class LicenseService {
 
     randomlyRunLong();
     return licenseRepository.findByOrganizationId(organizationId);
+  }
+
+  public List<License> buildFallbackLicenseList(String organizationId) {
+    List<License> fallbackList = new ArrayList<>();
+    License license = new License()
+            .withId("0000000-00-00000")
+            .withOrganizationId( organizationId )
+            .withProductName("Sorry no licensing information currently available");
+
+    fallbackList.add(license);
+    return fallbackList;
   }
 
   public void saveLicense(License license) {
