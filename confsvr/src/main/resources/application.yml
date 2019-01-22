@@ -31,8 +31,8 @@ spring:
         native:
           #  searchLocations: file://<chapter 3>/confsvr/src/main/resources/config/licensingservice,
           #                   file://<chapter 3>confsvr/src/main/resources/config/organizationservice
-          searchLocations: file:///src/test/java/spring-msa-ws/chapter4/confsvr/src/main/resources/config/licensingservice,
-                           file:///src/test/java/spring-msa-ws/chapter4/confsvr/src/main/resources/config/organizationservice,
+          searchLocations: file:///src/test/java/spring-msa-ws/chapter5/confsvr/src/main/resources/config/licensingservice,
+                           file:///src/test/java/spring-msa-ws/chapter5/confsvr/src/main/resources/config/organizationservice,
 ##              #searchLocations: classpath:config/,classpath:config/licensingservice
 
 management:
