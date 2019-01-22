@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.UUID;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.thoughtmechanix.licenses.clients.OrganizationDiscoveryClient;
 import com.thoughtmechanix.licenses.clients.OrganizationFeignClient;
 import com.thoughtmechanix.licenses.clients.OrganizationRestTemplateClient;
@@ -70,13 +71,17 @@ public class LicenseService {
 
   private void sleep() {
     try {
-      Thread.sleep(11000);
+      Thread.sleep(11000); // 테스트로 11초 쉬게함
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
   }
 
-  @HystrixCommand
+  @HystrixCommand(
+      commandProperties={
+          @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds", value="12000")  // 테스트를 위해 12초 대기하게 해서, 11초가 걸려도 통과되게
+      }
+  )
   public List<License> getLicensesByOrg(String organizationId) {
     logger.debug("LiceseService.getLicensesByOrg Correlation id: {}",
       UserContextHolder.getContext().getCorrelationId());
