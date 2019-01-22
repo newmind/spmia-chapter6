@@ -80,6 +80,11 @@ public class LicenseService {
 
   @HystrixCommand(
       fallbackMethod = "buildFallbackLicenseList",
+      threadPoolKey = "licenseByOrgThreadPool", // threadpool 의 고유 이름
+      threadPoolProperties = {
+          @HystrixProperty(name="coreSize", value="30"),  // threadpool 의 thread 갯수
+          @HystrixProperty(name="maxQueueSize", value="10") // threadpool 앞단의 큐에 대기할 큐의 요청수
+      },
       commandProperties={
           // @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds", value="12000")  // 테스트를 위해 12초 대기하게 해서, 11초가 걸려도 통과되게
       }
