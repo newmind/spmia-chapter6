@@ -20,7 +20,7 @@ public class UserContextHolder {
   }
 
   public static final void setContext(UserContext context) {
-    Assert.notNull(context, "Only non-null UserContext instalces are permitted");
+    Assert.notNull(context, "Only non-null UserContext instances are permitted");
     userContext.set(context);
   }
 
