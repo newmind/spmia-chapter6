@@ -13,7 +13,7 @@ services:
       file: ../common/docker-compose.yml
       service: configserver
   licensingservice:
-    image: jgkim/tmx-licensing-service:chapter3
+    image: jgkim/tmx-licensing-service:chapter6
     ports:
       - "8080:8080"
     environment:

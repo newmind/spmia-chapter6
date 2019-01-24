@@ -29,10 +29,10 @@ spring:
           # password: 0ffended
           # uri: https://github.com/LeeKyoungIl/spring-cloud-config-repository
         native:
-          #  searchLocations: file://<chapter 3>/confsvr/src/main/resources/config/licensingservice,
-          #                   file://<chapter 3>confsvr/src/main/resources/config/organizationservice
-          searchLocations: file:///src/test/java/spring-msa-ws/chapter5/confsvr/src/main/resources/config/licensingservice,
-                           file:///src/test/java/spring-msa-ws/chapter5/confsvr/src/main/resources/config/organizationservice,
+          #  searchLocations: file://<chapter 6>/confsvr/src/main/resources/config/licensingservice,
+          #                   file://<chapter 6>confsvr/src/main/resources/config/organizationservice
+          searchLocations: file:///src/test/java/spring-msa-ws/chapter6/confsvr/src/main/resources/config/licensingservice,
+                           file:///src/test/java/spring-msa-ws/chapter6/confsvr/src/main/resources/config/organizationservice,
 ##              #searchLocations: classpath:config/,classpath:config/licensingservice
 
 management:
@@ -52,9 +52,9 @@ management:
 #     config:
 #       server:
 #           native:
-#             #  searchLocations: file://<chapter 3>/confsvr/src/main/resources/config/licensingservice,
-#             #                   file://<chapter 3>confsvr/src/main/resources/config/organizationservice
-#             searchLocations: file:///src/test/java/spring-msa-ws/chapter3/confsvr/src/main/resources/config/licensingservice
+#             #  searchLocations: file://<chapter 6>/confsvr/src/main/resources/config/licensingservice,
+#             #                   file://<chapter 6>confsvr/src/main/resources/config/organizationservice
+#             searchLocations: file:///src/test/java/spring-msa-ws/chapter6/confsvr/src/main/resources/config/licensingservice
 # ##              #searchLocations: classpath:config/,classpath:config/licensingservice
 
 #         # native:
