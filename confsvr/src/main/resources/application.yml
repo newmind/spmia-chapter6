@@ -24,16 +24,20 @@ spring:
         encrypt.enabled: false
         git:
           uri: https://github.com/klimtever/config-repo/
-          searchPaths: licensingservice, organizationservice
+          searchPaths: licensingservice, organizationservice, zuulservice
           # username: native-cloud-apps
           # password: 0ffended
           # uri: https://github.com/LeeKyoungIl/spring-cloud-config-repository
         native:
           #  searchLocations: file://<chapter 6>/confsvr/src/main/resources/config/licensingservice,
           #                   file://<chapter 6>confsvr/src/main/resources/config/organizationservice
-          searchLocations: file:///src/test/java/spring-msa-ws/chapter6/confsvr/src/main/resources/config/licensingservice,
-                           file:///src/test/java/spring-msa-ws/chapter6/confsvr/src/main/resources/config/organizationservice,
-##              #searchLocations: classpath:config/,classpath:config/licensingservice
+          # searchLocations: file:///src/test/java/spring-msa-ws/chapter6/confsvr/src/main/resources/config/licensingservice,
+          #                  file:///src/test/java/spring-msa-ws/chapter6/confsvr/src/main/resources/config/organizationservice,
+          #                  file:///src/test/java/spring-msa-ws/chapter6/confsvr/src/main/resources/config/zuulservice,
+          searchLocations: >
+            classpath:config/licensingservice,
+            classpath:config/organizationservice,
+            classpath:config/zuulservice,
 
 management:
   security:
