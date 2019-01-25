@@ -2,3 +2,8 @@ zuul.prefix: /api
 # zuul.ignored-services: "organizationservice"
 zuul.routes.organizationservice: /organization/**
 zuul.routes.licensingservice: /licensing/**
+
+# 6.3.5 서비스 타임아웃설정(기본 : 1000ms)
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+#hystrix.command.licensingservice.execution.isolation.thread.timeoutInMilliseconds: 2000
+#licensingservice.ribbon.ReadTimeout: 4000
